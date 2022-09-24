@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   run-shell-command:
+    name: Run Shell Command
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
@@ -17,6 +18,8 @@ jobs:
           import platform
           print(platform.processor())
   run-windows-commands:
+    name: Run Windows Commands
+    needs: [run-shell-command]
     runs-on: windows-latest
     steps:
       - name: Directory PowerShell
